@@ -4,7 +4,9 @@
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
 # Custom
-Program.cs
+CWBDrone/Program.cs
+CWBDrone/cwbdrone.ico
+CWBDrone/cwbdrone.png
 
 # User-specific files
 *.suo
