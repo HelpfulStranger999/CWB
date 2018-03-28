@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using CWBDrone.Commands.Attributes;
+using Newtonsoft.Json;
 using NodaTime;
 using System.Collections.Generic;
 
@@ -10,7 +11,7 @@ namespace CWBDrone.Config
         public string Prefix { get; set; } = CWBDrone.Prefix;
         public ConfigGuildUsers GuildUsers { get; set; } = new ConfigGuildUsers();
 
-        [JsonProperty("TimeZone")]
+        [JsonProperty("TimeZone"), ConfigIgnore]
         public string TimezoneString
         {
             get => TimeZone.Id;
@@ -23,6 +24,8 @@ namespace CWBDrone.Config
         [JsonIgnore]
         public DateTimeZone TimeZone { get; set; } = DateTimeZoneProviders.Tzdb["America/Chicago"];
 
+
+        [Summary(""), Description("")]
         public ulong WelcomeChannel { get; set; } = 0;
         public string WelcomeMessage { get; set; } = "";
 
